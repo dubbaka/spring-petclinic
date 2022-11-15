@@ -7,6 +7,7 @@ pipeline {
     	agent any
       steps {
       	sh 'whoami'
+        sh "hostname"
       }
     }
     stage('Docker Build') {
