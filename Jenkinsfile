@@ -3,11 +3,14 @@
 pipeline {
 	agent none
   stages {
-  	stage('Which User') {
-    	agent any
+  	stage('Maven Install') {
+    	agent {
+      	docker {
+        	image 'maven:3.5.0'
+        }
+      }
       steps {
-      	sh 'whoami'
-        sh "hostname"
+      	sh 'mvn clean install'
       }
     }
     stage('Docker Build') {
