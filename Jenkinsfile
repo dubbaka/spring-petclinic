@@ -14,5 +14,5 @@ pipeline {
       steps {
       	sh 'docker build -t dubbaka/spring-petclinic:latest .'
       }
-    }  
-}
+    }
+  }
