@@ -3,6 +3,14 @@
 pipeline {
 	agent none
   stages {
+  	stage('Which User') {
+    	agent any
+      steps {
+      	sh 'whoami'
+      }
+    }
+  }
+  stages {
   	stage('Docker Build') {
     	agent any
       steps {
